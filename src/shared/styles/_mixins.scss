@@ -1,0 +1,90 @@
+@use '../../app/styles/colors' as _colors;
+
+%button {
+    border: 1px solid _colors.$accent-purple;
+    border-radius: 8px;
+    background: _colors.$button-background;
+    color: _colors.$button;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: clamp(0.5rem, 2vw, 0.75rem);
+    min-height: clamp(2.5rem, 6vh, 3rem);
+    cursor: pointer;
+    box-shadow: _colors.$button-box-shadow;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+
+    &:hover {
+        @extend %activeState;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: _colors.$button-box-shadow-active;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.75rem;
+        min-height: 2.2rem;
+    }
+}
+
+%activeState {
+    background: _colors.$button-background-hover;
+    color: _colors.$button-hover;
+    border-color: _colors.$accent-gold;
+    box-shadow: _colors.$button-box-shadow-hover;
+}
+
+%optionCardBase {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    border: 1px solid rgba(_colors.$accent-purple, 0.3);
+    background: rgba(_colors.$primary-dark, 0.4);
+    text-align: center;
+    min-height: 105px;
+    justify-content: center;
+}
+
+%widgetContainer {
+    width: min(1300px, 90vw);
+    height: min(770px, 85vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1.5rem;
+    border: 1px solid _colors.$border-color;
+    border-radius: 12px;
+    background: rgba(26, 23, 41, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: _colors.$box-shadow;
+
+    @media (max-width: 768px) {
+        height: min(680px, 90vh);
+        padding: 1.5rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+}
+
+%card-wrapper {
+    position: relative;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}

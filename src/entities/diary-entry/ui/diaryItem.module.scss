@@ -1,0 +1,117 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid _colors.$border-color;
+    border-radius: 12px;
+    background: rgba(26, 23, 41, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: _colors.$box-shadow;
+    transition: all 0.3s ease;
+    height: 100%;
+
+    &:hover {
+        border-color: _colors.$accent-purple;
+        box-shadow:
+            _colors.$box-shadow,
+            0 0 20px rgba(139, 92, 246, 0.3);
+        transform: translateY(-4px);
+    }
+
+    @media (max-width: 768px) {
+        border-radius: 10px;
+    }
+}
+
+.cardBackground {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(_colors.$accent-purple, 0.05);
+    border-bottom: 1px solid _colors.$border-color;
+
+    @media (max-width: 768px) {
+        height: 150px;
+    }
+
+    @media (max-width: 480px) {
+        height: 120px;
+    }
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1.5rem;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        padding: 1rem;
+        gap: 0.75rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 0.75rem;
+        gap: 0.5rem;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(_colors.$accent-purple, 0.1);
+}
+
+.spreadInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    flex: 1;
+}
+
+.label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: _colors.$accent-purple;
+}
+
+.text {
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    color: _colors.$text-secondary;
+    line-height: 1.4;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+.date {
+    font-size: 0.75rem;
+    color: _colors.$text-muted;
+    white-space: nowrap;
+}
+
+
+.purpose {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}

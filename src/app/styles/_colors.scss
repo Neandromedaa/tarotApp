@@ -1,0 +1,30 @@
+// Primary Colors
+$primary-dark: #0f0e1a;
+$primary-light: #1a1729;
+$accent-purple: #8b5cf6;
+$accent-purple-light: #a78bfa;
+$accent-gold: #fbbf24;
+
+// Button Colors
+$button-background: linear-gradient(135deg, #6d28d9 0%, #7c3aed 100%);
+$button: #ffffff;
+$button-background-hover: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%);
+$button-hover: #f3f4f6;
+$button-box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+$button-box-shadow-hover: 0 8px 25px rgba(139, 92, 246, 0.5);
+$button-box-shadow-active: 0 2px 8px rgba(139, 92, 246, 0.3);
+$disabledButton-background: #2d2640;
+$disabledButton: #6b7280;
+
+// Container & Border
+$box-shadow: 0 8px 32px rgba(139, 92, 246, 0.15);
+$border-color: rgba(139, 92, 246, 0.3);
+$border-color-hover: rgba(139, 92, 246, 0.6);
+
+// Text Colors
+$text-primary: #f9fafb;
+$text-secondary: #d1d5db;
+$text-muted: #9ca3af;
+
+// Background Colors
+$background-primary: linear-gradient(135deg, #0f0e1a 0%, #1a1729 50%, #2d1b4e 100%);

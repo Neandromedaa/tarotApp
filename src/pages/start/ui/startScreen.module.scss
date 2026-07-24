@@ -1,0 +1,113 @@
+@use '../../../shared/styles/mixins' as *;
+
+.startScreen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.glowOrb {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(139, 92, 246, 0.8) 0%, rgba(139, 92, 246, 0.3) 30%, rgba(139, 92, 246, 0.1) 60%, transparent 85%);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: glowPulse 3s ease-in-out infinite;
+    pointer-events: none;
+    filter: blur(40px);
+
+    @media (max-width: 768px) {
+        width: 350px;
+        height: 350px;
+    }
+
+    @media (max-width: 480px) {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+.button {
+    @extend %button;
+}
+
+@keyframes glowPulse {
+    0% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.15);
+    }
+    100% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(0.95);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 600px;
+}
+
+.appTitle {
+    font-family: _vars.$font-family-title;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    letter-spacing: 0.08em;
+    color: _colors.$accent-purple;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+}
+
+.description {
+    font-family: _vars.$font-family-accent;
+    font-size: clamp(1.3rem, 3vw, 1.6rem);
+    color: _colors.$text-secondary;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+    font-weight: 500;
+}
+
+.buttonGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        gap: 0.75rem;
+    }
+}
+
+.guestButton {
+    background: rgba(_colors.$accent-purple, 0.1);
+    border-color: rgba(_colors.$accent-purple, 0.5);
+    color: _colors.$text-secondary;
+
+    &:hover {
+        background: rgba(_colors.$accent-purple, 0.2);
+        border-color: _colors.$accent-purple;
+        color: _colors.$text-primary;
+    }
+}
+
+.error {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 8px;
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: #fca5a5;
+    font-size: 0.95rem;
+}

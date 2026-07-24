@@ -1,0 +1,19 @@
+.reading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: _colors.$accent-purple;
+    text-transform: uppercase;
+    margin: 1.5rem 0;
+    text-align: center;
+}

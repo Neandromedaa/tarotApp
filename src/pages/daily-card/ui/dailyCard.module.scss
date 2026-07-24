@@ -1,0 +1,109 @@
+.dailyCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    gap: 2rem;
+}
+
+.title {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: _colors.$accent-purple;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    border: 1px solid _colors.$border-color;
+    border-radius: 12px;
+    background: rgba(26, 23, 41, 0.6);
+    backdrop-filter: blur(10px);
+    box-shadow: _colors.$box-shadow;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+        padding: 1.5rem;
+        gap: 1rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1rem;
+        border-radius: 8px;
+    }
+}
+
+.card {
+    width: clamp(100px, 30vw, 200px);
+    height: clamp(150px, 45vw, 300px);
+    border-radius: 12px;
+    border: 2px solid _colors.$accent-purple;
+    background-size: cover;
+    background-position: center;
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(139, 92, 246, 0.2);
+    transition: all 0.3s ease;
+    align-self: center;
+
+    @media (max-width: 768px) {
+        width: clamp(80px, 25vw, 150px);
+        height: clamp(120px, 40vw, 225px);
+    }
+}
+
+.description {
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-weight: 500;
+    color: _colors.$text-secondary;
+    line-height: 1.8;
+    text-align: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.button {
+    border: 1px solid _colors.$accent-purple;
+    border-radius: 8px;
+    background: _colors.$button-background;
+    color: _colors.$button;
+    font-size: clamp(0.8rem, 2vw, 0.95rem);
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: clamp(0.5rem, 2vw, 0.75rem);
+    min-height: clamp(2.5rem, 6vh, 3rem);
+    cursor: pointer;
+    box-shadow: _colors.$button-box-shadow;
+    transition: all 0.25s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background: _colors.$button-background-hover;
+        color: _colors.$button-hover;
+        border-color: _colors.$accent-gold;
+        box-shadow: _colors.$button-box-shadow-hover;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: _colors.$button-box-shadow-active;
+    }
+
+    @media (max-width: 480px) {
+        font-size: 0.75rem;
+        min-height: 2.2rem;
+    }
+}

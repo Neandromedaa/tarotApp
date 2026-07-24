@@ -1,0 +1,40 @@
+@use '../../../shared/styles/mixins';
+
+.dailyCardFlow {
+    @extend %widgetContainer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-wrapper {
+    @extend %card-wrapper;
+}
+
+.largeFlares {
+    transform: scale(2);
+}
+
+.button {
+    @extend %button;
+    z-index: 2;
+}
+
+.result {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 2rem;
+}
+
+.resultText {
+    width: clamp(200px, 80%, 800px);
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    text-align: center;
+}
+
+.hint {
+    text-align: center;
+    color: _colors.$text-secondary;
+}

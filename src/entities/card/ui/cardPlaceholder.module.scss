@@ -1,0 +1,30 @@
+.cardPlaceholder {
+    display: flex;
+    flex-flow: column;
+}
+
+.cardPlaceholder_card {
+    width: clamp(100px, 20vw, 180px);
+    height: clamp(150px, 30vw, 280px);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 2px dashed _colors.$accent-purple;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: bold;
+    position: relative;
+    color: _colors.$accent-purple;
+    background: rgba(_colors.$accent-purple, 0.05);
+    transition: all 0.3s ease;
+
+    &:hover {
+        background: rgba(_colors.$accent-purple, 0.1);
+        border-color: _colors.$accent-purple;
+    }
+}
+
+.cardPlaceholder_title {
+    height: 40px;
+}
