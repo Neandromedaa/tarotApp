@@ -15,7 +15,6 @@ function DiaryItem({ value }: DiaryItemProps) {
     if (value.type === 'dailyCard') {
         return (
             <div className={styles.item}>
-                <div className={styles.cardBackground} style={{ backgroundImage: 'none' }} />
                 <div className={styles.content}>
                     <div className={styles.header}>
                         <div className={styles.spreadInfo}>
