@@ -4,11 +4,9 @@ import { useState } from 'react';
 
 import { useCloudinaryImage } from '../../../shared/lib/hooks/useCloudinaryImage';
 import type { TarotCard } from '../model/types';
+import commonCardSrc from '../../../shared/assets/images/commonCard.jpg';
 
 import styles from './card.module.scss';
-
-const commonCardSrc = 'src/shared/assets/images/commonCard.jpg';
-
 interface CardProps {
     item: TarotCard;
     dailyTitle?: boolean;
