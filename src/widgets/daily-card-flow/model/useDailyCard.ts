@@ -3,6 +3,9 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQueryClient } from '@tanstack/react-query';
 
+
+import { fetchCards } from '../../../entities/card/model/fetchTarotCardsSlice';
+import { useAppDispatch } from '../../../shared/lib/hooks/useAppDispatch';
 import { fetchTodayDailyCard } from '../../../entities/daily-card/api/fetchTodayDailyCard';
 import { saveDiaryEntry } from '../../../features/save-diary-entry/api/saveDiaryEntry';
 import { generateTarotMeaning } from '../../../features/generate-tarot-meaning/api/generate-tarot-meaning';
@@ -20,6 +23,7 @@ function todayKey(): string {
 }
 
 export function useDailyCard() {
+    const dispatch = useAppDispatch();
     const userId = useAppSelector((state) => state.userId.userId);
     const cards = useAppSelector((state) => state.cards.items);
     const navigate = useNavigate();
@@ -57,7 +61,13 @@ export function useDailyCard() {
 
     async function pickCard(): Promise<void> {
         setPhase('loading');
-        const randomCard = cards[Math.floor(Math.random() * cards.length)];
+
+        let availableCards = cards;
+        if (availableCards.length === 0) {
+            availableCards = await dispatch(fetchCards()).unwrap();
+        }
+
+        const randomCard = availableCards[Math.floor(Math.random() * availableCards.length)];
         setCard(randomCard);
 
         const minDelay = new Promise<void>((resolve) => setTimeout(resolve, 2000));
