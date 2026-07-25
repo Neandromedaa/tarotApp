@@ -17,10 +17,6 @@ export function useAuth() {
         dispatch(setUserId(null));
     }
 
-    function signup(): void {
-        loginWithRedirect({ authorizationParams: { screen_hint: 'signup' } });
-    }
-
     function login(): void {
         loginWithRedirect();
     }
@@ -29,5 +25,5 @@ export function useAuth() {
         auth0Logout({ logoutParams: { returnTo: window.location.origin } });
     }
 
-    return { isLoading, error, isAuthenticated, login, signup, continueAsGuest, logout };
+    return { isLoading, error, isAuthenticated, login, continueAsGuest, logout };
 }

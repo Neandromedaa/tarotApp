@@ -10,7 +10,7 @@ import styles from './startScreen.module.scss';
 
 function StartScreen() {
     const navigate = useNavigate();
-    const { isLoading, error, isAuthenticated, login, signup, continueAsGuest } = useAuth();
+    const { isLoading, error, isAuthenticated, login, continueAsGuest } = useAuth();
 
     useEffect(() => {
         if (isAuthenticated) navigate(ROUTES.MENU);
@@ -42,7 +42,6 @@ function StartScreen() {
                 </p>
 
                 <div className={styles.buttonGroup}>
-                    <button onClick={signup} className={styles.button}>Создать аккаунт</button>
                     <button onClick={login} className={styles.button}>Войти</button>
                     <button onClick={handleGuest} className={clsx(styles.button, styles.guestButton)}>
                         Гость
