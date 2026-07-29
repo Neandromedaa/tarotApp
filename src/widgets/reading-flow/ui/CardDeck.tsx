@@ -19,7 +19,7 @@ function CardDeck({ isCardsPlaced, onClick }: CardDeckProps) {
                 onClick={() => !isCardsPlaced && onClick()}
                 className={clsx(styles.cardDeck)}
                 style={{ cursor: isCardsPlaced ? 'default' : 'pointer' }}>
-                <AdvancedImage cldImg={backImg} />
+                <AdvancedImage cldImg={backImg} className={styles.cardCloud}/>
             </div>
             {!isCardsPlaced && <p className={styles.hint}>Нажмите на колоду, чтобы открыть карту</p>}
         </>
