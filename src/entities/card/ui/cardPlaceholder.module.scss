@@ -3,6 +3,7 @@
 .cardPlaceholder {
     display: flex;
     flex-flow: column;
+    justify-content: end;
 }
 
 .cardPlaceholder_card {
@@ -26,5 +27,5 @@
 }
 
 .cardPlaceholder_title {
-    height: 40px;
+    height: 49px;
 }
