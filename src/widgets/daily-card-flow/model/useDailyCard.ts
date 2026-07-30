@@ -81,6 +81,12 @@ export function useDailyCard() {
         });
 
         const [, result] = await Promise.all([minDelay, meaningPromise]);
+
+        if (!result) {
+            setPhase('error');
+            return;
+        }
+
         setMeaning(result);
         setPhase('revealing');
 

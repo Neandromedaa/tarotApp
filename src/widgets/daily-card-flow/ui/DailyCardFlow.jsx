@@ -29,11 +29,19 @@ function DailyCardFlow() {
                 </button>
             )}
 
+            {phase === 'error' && (
+                <div className={styles.result}>
+                    <p className={styles.error}>{errorMessage}</p>
+                    <button className={styles.button} onClick={goToMenu}>
+                        Вернуться в меню
+                    </button>
+                </div>
+            )}
+
             {phase === 'result' && card && (
                 <div className={styles.result}>
                     <Card item={card} dailyTitle={true}/>
                     {meaning?.short && <p className={styles.resultText}>{meaning.short}</p>}
-                    {errorMessage && <p className={styles.error}>{errorMessage}</p>}
                     <p className={styles.hint}>Следующая карта дня будет доступна завтра</p>
                     <button className={styles.button} onClick={goToMenu}>
                         Вернуться в меню
